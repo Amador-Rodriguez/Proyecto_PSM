@@ -21,8 +21,10 @@ import org.jetbrains.annotations.NonNls
 import androidx.appcompat.widget.Toolbar
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONObject
 
 
 class MainActivity : AppCompatActivity() {
@@ -56,18 +58,47 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+        /*
         val queue = Volley.newRequestQueue(this)
-        val url = "192.168.1.68/PSM/login_inc.php"
+        val url = "192.168.0.13/PSM/login_inc.php"
 
-        val stringRequest = StringRequest(Request.Method.POST, url, { response ->
+        val stringRequest = StringRequest(Request.Method.POST, url ,{ response ->
             Toast.makeText(applicationContext, response.trim(), Toast.LENGTH_SHORT).show()
         }, { error ->
             Toast.makeText(applicationContext, "No accede al servicio", Toast.LENGTH_SHORT).show()
         })
 
         queue.add(stringRequest)
+        */
+        val queue = Volley.newRequestQueue(this)
+        val url = "https://192.168.0.13/PSM/login_inc.php"
+        val datos = HashMap<String, Any>()
+        datos["correo"] = "amador_rbel@hotmail.com"
+        datos["pwd"] = "Ready74"
 
+        val datos_toSend = JSONObject(datos as Map<*, *>?)
 
+        val solicitud = JsonObjectRequest(Request.Method.POST, url, datos_toSend,
+            {response->
+
+                try{
+                    val error_serv = response.getInt("error")
+                    if(error_serv == 0){
+                        Toast.makeText(this, "Exito. ${response.getString("mensaje")}", Toast.LENGTH_SHORT).show()
+                    }else{
+                        Toast.makeText(this, "Error. ${response.getString("mensaje")}", Toast.LENGTH_SHORT).show()
+
+                    }
+                }catch (e: Exception){
+                    Toast.makeText(this, "$e", Toast.LENGTH_SHORT).show()
+                }
+
+            },{
+                Toast.makeText(this, "$it", Toast.LENGTH_SHORT).show()
+        })
+
+        HttpsTrustManager.allowAllSSL()
+        queue.add(solicitud)
 
 
 
