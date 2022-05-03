@@ -17,18 +17,6 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
     }
 
-    private fun insertar (){
-        val url = "http://localhost/db_psm/register_inc.php";
-        val datos = HashMap<String, Any>()
-        val txt_name = findViewById<View>(R.id.txt_name) as EditText
-        val txt_pwd = findViewById<View>(R.id.txt_pwd) as EditText
 
-        data["nombre"] = txt_name.text.toString()
-        data["contrasena"] = txt_pwd.text.toString()
-
-        val datos_enviar = JSONObject(datos as Map<*, *>?)
-
-
-    }
 
 }

@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.SearchView
+import android.widget.Toast
 
 import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
@@ -18,6 +19,10 @@ import com.example.proyecto_poi.fragments.MessagesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.jetbrains.annotations.NonNls
 import androidx.appcompat.widget.Toolbar
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,20 +41,33 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(topBar)
         bottomNavView = findViewById(R.id.bottomNavigation)
         bottomNavView.setOnItemSelectedListener {
-            when(it.itemId){
-                R.id.menu_home->{
+            when (it.itemId) {
+                R.id.menu_home -> {
                     replaceFragment(homeFragment)
                 }
-                R.id.menu_folder->{
+                R.id.menu_folder -> {
                     replaceFragment(categoriasFragment)
                 }
-                R.id.menu_msg->{
+                R.id.menu_msg -> {
                     replaceFragment(messagesFragment)
                 }
 
             }
             true
         }
+
+        val queue = Volley.newRequestQueue(this)
+        val url = "192.168.1.68/PSM/login_inc.php"
+
+        val stringRequest = StringRequest(Request.Method.POST, url, { response ->
+            Toast.makeText(applicationContext, response.trim(), Toast.LENGTH_SHORT).show()
+        }, { error ->
+            Toast.makeText(applicationContext, "No accede al servicio", Toast.LENGTH_SHORT).show()
+        })
+
+        queue.add(stringRequest)
+
+
 
 
 
