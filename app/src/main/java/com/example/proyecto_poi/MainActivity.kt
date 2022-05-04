@@ -58,20 +58,8 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        /*
         val queue = Volley.newRequestQueue(this)
-        val url = "192.168.0.13/PSM/login_inc.php"
-
-        val stringRequest = StringRequest(Request.Method.POST, url ,{ response ->
-            Toast.makeText(applicationContext, response.trim(), Toast.LENGTH_SHORT).show()
-        }, { error ->
-            Toast.makeText(applicationContext, "No accede al servicio", Toast.LENGTH_SHORT).show()
-        })
-
-        queue.add(stringRequest)
-        */
-        val queue = Volley.newRequestQueue(this)
-        val url = "https://192.168.0.13/PSM/login_inc.php"
+        val url = "https://192.168.1.68/PSM/login_inc.php"
         val datos = HashMap<String, Any>()
         datos["correo"] = "amador_rbel@hotmail.com"
         datos["pwd"] = "Ready74"
