@@ -10,8 +10,10 @@
         <entry key="..\:/7 semestre/PSM/Proyecto_POI/app/src/main/res/drawable/btn_state_textcolor.xml" value="0.1135" />
         <entry key="..\:/7 semestre/PSM/Proyecto_POI/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/7 semestre/PSM/Proyecto_POI/app/src/main/res/layout/activity_main.xml" value="0.1956521739130435" />
+        <entry key="..\:/7 semestre/Proyecto PSM/Proyecto PSM/app/src/main/res/layout/activity_login.xml" value="0.27291666666666664" />
         <entry key="..\:/7 semestre/Proyecto PSM/Proyecto PSM/app/src/main/res/layout/activity_main.xml" value="0.25885416666666666" />
         <entry key="..\:/7 semestre/Proyecto PSM/Proyecto PSM/app/src/main/res/layout/activity_register.xml" value="0.27291666666666664" />
+        <entry key="..\:/7 semestre/Proyecto PSM/Proyecto PSM/app/src/main/res/xml/network_security_config.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/arb_c/Desktop/Proyecto PSM/Proyecto PSM/app/src/main/res/layout/fragment_messages.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/arb_c/Desktop/Proyecto PSM/proyecto_POI-master/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2115" />
         <entry key="..\:/Users/arb_c/Desktop/Proyecto PSM/proyecto_POI-master/app/src/main/res/drawable/btn_state_border.xml" value="0.2115" />
@@ -43,9 +45,6 @@
         <entry key="..\:/Users/arb_c/Desktop/proyecto_POI-master (1)/proyecto_POI-master/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/arb_c/Desktop/proyecto_POI-master (1)/proyecto_POI-master/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/arb_c/Desktop/proyecto_POI-master (1)/proyecto_POI-master/app/src/main/res/layout/activity_register.xml" value="0.20175438596491227" />
-        <entry key="..\:/Users/arb_c/Documents/GitHub/Proyecto_PSM/app/src/main/res/layout/activity_login.xml" value="0.22" />
-        <entry key="..\:/Users/arb_c/Documents/GitHub/Proyecto_PSM/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/arb_c/Documents/GitHub/Proyecto_PSM/app/src/main/res/layout/activity_register.xml" value="0.25" />
       </map>
     </option>
   </component>

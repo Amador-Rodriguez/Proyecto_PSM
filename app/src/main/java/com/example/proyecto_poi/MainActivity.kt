@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        val queue = Volley.newRequestQueue(this)
+        /*val queue = Volley.newRequestQueue(this)
         val url = "https://192.168.1.68/PSM/login_inc.php"
         val datos = HashMap<String, Any>()
         datos["correo"] = "amador_rbel@hotmail.com"
@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
 
         HttpsTrustManager.allowAllSSL()
         queue.add(solicitud)
-
+        */
 
 
     }
