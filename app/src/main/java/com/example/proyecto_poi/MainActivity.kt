@@ -58,36 +58,8 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        /*val queue = Volley.newRequestQueue(this)
-        val url = "https://192.168.1.68/PSM/login_inc.php"
-        val datos = HashMap<String, Any>()
-        datos["correo"] = "amador_rbel@hotmail.com"
-        datos["pwd"] = "Ready74"
 
-        val datos_toSend = JSONObject(datos as Map<*, *>?)
 
-        val solicitud = JsonObjectRequest(Request.Method.POST, url, datos_toSend,
-            {response->
-
-                try{
-                    val error_serv = response.getInt("error")
-                    if(error_serv == 0){
-                        Toast.makeText(this, "Exito. ${response.getString("mensaje")}", Toast.LENGTH_SHORT).show()
-                    }else{
-                        Toast.makeText(this, "Error. ${response.getString("mensaje")}", Toast.LENGTH_SHORT).show()
-
-                    }
-                }catch (e: Exception){
-                    Toast.makeText(this, "$e", Toast.LENGTH_SHORT).show()
-                }
-
-            },{
-                Toast.makeText(this, "$it", Toast.LENGTH_SHORT).show()
-        })
-
-        HttpsTrustManager.allowAllSSL()
-        queue.add(solicitud)
-        */
 
 
     }

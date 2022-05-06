@@ -6,6 +6,11 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import org.json.JSONObject
 
 
 class Login : AppCompatActivity() {
@@ -29,11 +34,39 @@ class Login : AppCompatActivity() {
                 txt_correo.setError("Your message");
 
             }else{
-                var error = bd.login(correo_,pwd_)
-                if(error == 0){
-                    val lanzar = Intent(this, MainActivity::class.java)
-                    startActivity(lanzar)
-                }
+
+                val queue = Volley.newRequestQueue(this)
+                val url = "https://192.168.1.168/PSM/login_inc.php"
+                val datos = HashMap<String, Any>()
+                datos["correo"] = correo_
+                datos["pwd"] = pwd_
+
+                val datos_toSend = JSONObject(datos as Map<*, *>?)
+
+                val solicitud = JsonObjectRequest(
+                    Request.Method.POST, url, datos_toSend,
+                    {response->
+
+                        try{
+                            val error_serv = response.getInt("error")
+                            if(error_serv == 0){
+                                Toast.makeText(this, "Exito. ${response.getString("mensaje")}", Toast.LENGTH_SHORT).show()
+                                val lanzar = Intent(this, MainActivity::class.java)
+                                startActivity(lanzar)
+                            }else{
+                                Toast.makeText(this, "Error. ${response.getString("mensaje")}", Toast.LENGTH_SHORT).show()
+
+                            }
+                        }catch (e: Exception){
+                            Toast.makeText(this, "$e", Toast.LENGTH_SHORT).show()
+                        }
+
+                    },{
+                        Toast.makeText(this, "$it", Toast.LENGTH_SHORT).show()
+                    })
+
+                HttpsTrustManager.allowAllSSL()
+                queue.add(solicitud)
 
             }
 
