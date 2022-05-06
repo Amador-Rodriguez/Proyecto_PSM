@@ -24,6 +24,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.proyecto_poi.Session.SessionManager
 import org.json.JSONObject
 
 
@@ -34,6 +35,8 @@ class MainActivity : AppCompatActivity() {
     private val homeFragment = HomeFragment()
     private val categoriasFragment = CategoriasFragment()
     private val messagesFragment = MessagesFragment()
+
+    private  var sessionManager = SessionManager()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +60,10 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+        sessionManager.SessionManager(applicationContext)
+
+        sessionManager.checkLogin()
 
 
 

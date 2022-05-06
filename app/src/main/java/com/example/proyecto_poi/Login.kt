@@ -10,20 +10,23 @@ import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.proyecto_poi.Session.SessionManager
 import org.json.JSONObject
 
 
 class Login : AppCompatActivity() {
 
+    private  var sessionManager = SessionManager()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        val btn_login = findViewById<Button>(R.id.btn_login);
-        val btn_register = findViewById<Button>(R.id.btn_register);
+        val btn_login = findViewById<Button>(R.id.btn_login)
+        val btn_register = findViewById<Button>(R.id.btn_register)
         val txt_correo = findViewById<EditText>(R.id.editTextCorreo)
         val txt_pwd = findViewById<EditText>(R.id.editTextPwd)
 
-        val bd = dbh(this)
+        sessionManager.SessionManager(applicationContext)
 
         btn_login.setOnClickListener{
 
@@ -31,12 +34,12 @@ class Login : AppCompatActivity() {
             var pwd_ = txt_pwd.getText().toString()
 
             if(TextUtils.isEmpty(correo_) && TextUtils.isEmpty(pwd_)){
-                txt_correo.setError("Your message");
+                txt_correo.setError("Your message")
 
             }else{
 
                 val queue = Volley.newRequestQueue(this)
-                val url = "https://192.168.1.168/PSM/login_inc.php"
+                val url = "https://192.168.0.13/PSM/login_inc.php"
                 val datos = HashMap<String, Any>()
                 datos["correo"] = correo_
                 datos["pwd"] = pwd_
@@ -51,6 +54,7 @@ class Login : AppCompatActivity() {
                             val error_serv = response.getInt("error")
                             if(error_serv == 0){
                                 Toast.makeText(this, "Exito. ${response.getString("mensaje")}", Toast.LENGTH_SHORT).show()
+                                sessionManager.CreateLoginSession(correo_,pwd_)
                                 val lanzar = Intent(this, MainActivity::class.java)
                                 startActivity(lanzar)
                             }else{

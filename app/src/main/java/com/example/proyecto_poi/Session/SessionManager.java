@@ -14,10 +14,13 @@ public class SessionManager {
     SharedPreferences.Editor editor;
     Context _context;
     int Private_mode = 0;
-    private static final String PREF_NAME = "AndroidHivPref";
+    private static final String PREF_NAME = "AndroidHivePref";
+
     private static final String IS_LOGIN = "IsLoggedIn";
-    private static final String KEY_EMAIL = "email";
-    private static final String KEY_PASSWORD = "password";
+
+    public static final String KEY_EMAIL = "email";
+
+    public static final String KEY_PASSWORD = "password";
 
     public void SessionManager(Context context){
         this._context = context;
