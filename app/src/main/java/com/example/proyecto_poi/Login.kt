@@ -39,7 +39,7 @@ class Login : AppCompatActivity() {
             }else{
 
                 val queue = Volley.newRequestQueue(this)
-                val url = "https://192.168.0.13/PSM/login_inc.php"
+                val url = "https://192.168.0.11/PSM/login_inc.php"
                 val datos = HashMap<String, Any>()
                 datos["correo"] = correo_
                 datos["pwd"] = pwd_
@@ -81,6 +81,8 @@ class Login : AppCompatActivity() {
             startActivity(lanzar)
         }
 
-
     }
+
+
+
 }
