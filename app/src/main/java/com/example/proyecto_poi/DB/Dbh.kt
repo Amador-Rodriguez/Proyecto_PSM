@@ -19,8 +19,8 @@ class dbh {
     private var queue : RequestQueue
     private val context : Context;
 
-    private val url_login = "https://192.168.1.68/PSM/login_inc.php"
-    private val url_register = "https://192.168.0.13/PSM/login_inc.php"
+    private val url_login = "https://192.168.0.5/PSM/login_inc.php"
+    private val url_register = "https://192.168.0.5/PSM/login_inc.php"
     private var errorserv = 0
 
     constructor(context_:Context){

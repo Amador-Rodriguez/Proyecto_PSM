@@ -3,6 +3,7 @@ package com.example.proyecto_poi
 
 import android.app.SearchManager
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -45,6 +46,8 @@ class MainActivity : AppCompatActivity() {
         topBar = findViewById(R.id.topBar)
         setSupportActionBar(topBar)
         bottomNavView = findViewById(R.id.bottomNavigation)
+
+
         bottomNavView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_home -> {
@@ -65,6 +68,20 @@ class MainActivity : AppCompatActivity() {
 
         sessionManager.checkLogin()
 
+
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.new_post -> {
+                val lanzar = Intent(this, NewPostActivity::class.java)
+                startActivity(lanzar)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onCreateOptionsMenu (menu: Menu): Boolean {

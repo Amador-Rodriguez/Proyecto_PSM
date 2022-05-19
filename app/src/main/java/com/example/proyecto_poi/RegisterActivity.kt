@@ -54,8 +54,8 @@ class RegisterActivity : AppCompatActivity() {
             }else{
 
                 val queue = Volley.newRequestQueue(this)
-                val url_login = "https://192.168.0.11/PSM/login_inc.php"
-                val url_register = "https://192.168.0.11/PSM/register_inc.php"
+                val url_login = "https://192.168.0.5/PSM/login_inc.php"
+                val url_register = "https://192.168.0.5/PSM/register_inc.php"
 
                 val datos = HashMap<String, Any>()
                 datos["nombre"] = nombre_
