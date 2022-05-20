@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,16 +8,93 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/amarillo">
+
+
+        <ImageButton
+            android:id="@+id/ImageButton_Category_Drawings"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/btn_rounded"
+            android:backgroundTint="@color/rojo"
+            android:src="@drawable/ico_category_draw"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.862"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Section_Name_Category" />
+
+        <ImageButton
+            android:id="@+id/ImageButton_Category_Cine"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/btn_rounded"
+            android:backgroundTint="@color/rojo"
+            android:src="@drawable/ico_category_cine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.547"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ImageButton_Category_Music" />
+
+        <ImageButton
+            android:id="@+id/ImageButton_Category_Music"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/btn_rounded"
+            android:backgroundTint="@color/rojo"
+            android:src="@drawable/ico_category_music"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.862"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ImageButton_Category_Drawings" />
+
+        <ImageButton
+            android:id="@+id/ImageButton_Category_landscape"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/btn_rounded"
+            android:backgroundTint="@color/rojo"
+            android:src="@drawable/ico_category_landscape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.183"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Section_Name_Category" />
+
+
+        <ImageButton
+            android:id="@+id/ImageButton_Category_Portrait"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/btn_rounded"
+            android:backgroundTint="@color/rojo"
+            android:src="@drawable/ico_category_portrait"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.183"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ImageButton_Category_landscape" />
+
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/Section_Name_Category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:fontFamily="sans-serif-black"
             android:text="Categorías"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+
+
+</RelativeLayout>
