@@ -4,6 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azul"
+    android:background="@color/white"
 
-    tools:context=".NewPostActivity"/>
+    android:backgroundTint="#FFFFFF"
+    tools:context=".NewPostActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar_superior_NewPost"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@color/azul"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/Btn_FlechaSalir_NewPost"
+        android:layout_width="63dp"
+        android:layout_height="54dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/Toolbar_superior_NewPost"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ico_backarrow" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar_inferior_NewPost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/rojo"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Toolbar_inferior_NewPost"
+        app:layout_constraintHorizontal_bias="0.284"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Toolbar_inferior_NewPost"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/Toolbar_inferior_NewPost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Toolbar_inferior_NewPost"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@android:drawable/ic_menu_mylocation" />
+
+    <Button
+        android:id="@+id/Btn_Guardar_NewPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:backgroundTint="#00FFFFFF"
+        android:outlineSpotShadowColor="#00FFFFFF"
+        android:text="Guardar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/Toolbar_superior_NewPost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/Toolbar_superior_NewPost"
+        app:layout_constraintTop_toTopOf="@+id/Toolbar_superior_NewPost"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <TextView
+        android:id="@+id/Text_NewPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Publica algo, todo es interesante..."
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="78dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
